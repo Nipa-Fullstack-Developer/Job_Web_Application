@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('application_status');
             $table->string('newapplier_img')->nullable();
             $table->string('newapplier_alt_img')->nullable();
+             $table->string('job_board');
+              $table->string('notes');
             $table->timestamps();
         });
     }

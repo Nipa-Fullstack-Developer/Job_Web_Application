@@ -317,6 +317,10 @@
 }
 
 .applier-form .btn {
-    width: 100%;
+   
     font-size: 16px;
 }
+.applier-form label{
+    color: blue;
+    font-size: 18px;
+} 

@@ -14,6 +14,8 @@
                         <th scope="col">Job Title</th>
                         <th scope="col">Application Date</th>
                         <th scope="col">Application Status</th>
+                        <th scope="col">Job Board</th>
+                        <th scope="col">Notes</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -30,6 +32,8 @@
                         <td>{{ $jobappliers->job_title }}</td>
                         <td>{{ $jobappliers->application_date }}</td>
                         <td>{{ $jobappliers->application_status }}</td>
+                        <td>{{ $jobappliers->job_board }}</td>
+                        <td>{{ $jobappliers->notes }}</td>
                         <td class="d-flex">
                             <div class="p-2 bg-danger">
                                 <a class="text-white" href="{{ route('user.jobapplier.image.edit', $jobappliers->id) }}"><i class="fa-solid fa-file-pen" style="font-size: 16px;"></i></a>

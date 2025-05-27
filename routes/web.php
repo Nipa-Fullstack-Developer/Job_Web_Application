@@ -27,7 +27,7 @@ Route::prefix('user/jobapplier/')->name('user.jobapplier.')->group(function () {
     Route::get('delete/{jobapplier}', [JobApplierController::class, 'destroy'])->name('destroy');
 
     Route::post('store', [NewJobApplierController::class, 'store'])->name('store');
-    Route::put('update/{jobapplier}', [NewJobApplierController::class, 'update'])->name('update');
-    Route::put('image/update/{jobapplier}', [NewJobApplierController::class, 'updateImage'])->name('image.update');
+    Route::put('update/{jobapplier}', [JobApplierController::class, 'update'])->name('update');
+    Route::put('image/update/{jobapplier}', [JobApplierController::class, 'updateImage'])->name('image.update');
 
 })->middleware('user');
