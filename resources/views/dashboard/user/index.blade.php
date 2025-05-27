@@ -10,6 +10,7 @@
                     <tr>
                         <th scope="col">Serial No.</th>
                         <th scope="col">Applier Image</th>
+                        <th scope="col">Your Name</th>
                         <th scope="col">Company Name</th>
                         <th scope="col">Job Title</th>
                         <th scope="col">Application Date</th>
@@ -26,8 +27,9 @@
                     <tr>
                         <td>{{ $count }}</td>
                         <td>
-                            <img src="{{ asset('/uploads/newjobapplier/' . $jobappliers->newapplier_img ) }}" width="50px" height="50px">
+                            <img src="{{ asset('/uploads/newjobapplier/' . $jobappliers->newapplier_img ) }}" width="250px" height="150px">
                         </td>
+                        <td>{{ $jobappliers->name }}</td>
                         <td>{{ $jobappliers->company_name }}</td>
                         <td>{{ $jobappliers->job_title }}</td>
                         <td>{{ $jobappliers->application_date }}</td>

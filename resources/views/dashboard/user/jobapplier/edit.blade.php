@@ -12,6 +12,15 @@
          <form method="post" action="{{ route('user.jobapplier.update', $jobapplier->id) }}">
              @csrf
              @method('PUT')
+              <div class="form-group mb-3">
+                 <label for="exampleFormControlInput1 mb-3">Your Name</label>
+                 <input type="text" class="form-control form-control-sm px-3 py-2 mt-2" name="name" id="exampleFormControlInput1" placeholder="Your Name" value="{{ $jobapplier->name }}">
+                 <div class="pt-1 text-danger">
+                     @error('name')
+                     <div class="error">{{ $message }}</div>
+                     @enderror
+                 </div>
+             </div>
              <div class="form-group mb-3">
                  <label for="exampleFormControlInput1 mb-3">Company Name</label>
                  <input type="text" class="form-control form-control-sm px-3 py-2 mt-2" name="company_name" id="exampleFormControlInput1" placeholder="Company Name" value="{{ $jobapplier->company_name }}">

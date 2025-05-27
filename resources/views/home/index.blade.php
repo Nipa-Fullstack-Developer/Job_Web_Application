@@ -7,15 +7,24 @@
         </div>
         <div class="col-lg-6">
             <div class="applier-form">
-                <h2 class="mb-4">Apply New Job</h2>
+                <h2 class="mb-3">Apply New Job</h2>
 
                 <form method="post" action="{{ route('user.jobapplier.store') }}" enctype="multipart/form-data">
                     @csrf
+                     <div class="form-group">
+                        <label for="exampleFormControlInput1 mb-3">Your Name</label>
+                        <input type="text" class="form-control form-control-sm px-2 py-2" name="name" id="exampleFormControlInput1" placeholder="Your Name">
+                        <div class="pt-1 text-danger">
+                            @error('name')
+                            <div class="error">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1 mb-3">Company Name</label>
                         <input type="text" class="form-control form-control-sm px-2 py-2" name="company_name" id="exampleFormControlInput1" placeholder="Company Name">
                         <div class="pt-1 text-danger">
-                            @error('name')
+                            @error('company_name')
                             <div class="error">{{ $message }}</div>
                             @enderror
                         </div>
@@ -55,12 +64,29 @@
                             @enderror
                         </div>
                     </div>
-
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1 mb-3">Job Board</label>
+                        <input type="text" class="form-control form-control-sm px-3 py-2 mt-2" name="job_board" id="exampleFormControlInput1" placeholder="Job Board">
+                        <div class="pt-1 text-danger">
+                            @error('job_board')
+                            <div class="error">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1 mb-3">Notes</label>
+                        <input type="text" class="form-control form-control-sm px-3 py-2 mt-2" name="notes" id="exampleFormControlInput1" placeholder="Notes">
+                        <div class="pt-1 text-danger">
+                            @error('notes')
+                            <div class="error">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
 
                     <div>
                         <label for="exampleFormControlInput1 mb-3">Applier Image</label>
                         <div>
-                            <input type="file" name="newapplier_img" accept="image/jpeg, image/png, image/jpg" onchange="previewImage(event)">
+                            <input type="file" id="exampleFormControlInput1" name="newapplier_img" accept="image/jpeg, image/png, image/jpg" onchange="previewImage(event)">
                         </div>
                         <div class="pt-3">
                             <img id="imagePreview" width="200px" height="120px">
@@ -71,7 +97,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 mt-3">
                         <button class="btn btn-sm btn-primary text-white" type="submit">Apply Now</button>
                     </div>
                     <div class="pt-4">

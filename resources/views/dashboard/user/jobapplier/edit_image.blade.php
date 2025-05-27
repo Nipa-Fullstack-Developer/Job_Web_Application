@@ -36,15 +36,6 @@
                                      @enderror
                                  </div>
                              </div>
-                             <div class="form-group mb-3 pt-2">
-                                 <label for="exampleFormControlInput1 mb-3">Applier Image Name</label>
-                                 <input type="text" class="form-control form-control-sm px-3 py-2 mt-2" name="newapplier_alt_img" id="exampleFormControlInput1" placeholder="Applier Image Name" value="{{ $jobapplier->newapplier_alt_img }}">
-                                 <div class="pt-1 text-danger">
-                                     @error('newapplier_alt_img')
-                                     <div class="error">{{ $message }}</div>
-                                     @enderror
-                                 </div>
-                             </div>
                          </div>
                      </div>
                      <div class="mb-3 mt-4">
