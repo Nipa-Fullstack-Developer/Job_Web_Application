@@ -15,7 +15,9 @@
 	 @yield('content')
 	 <!-- main -->
 
-	
+	<!-- footer -->
+	 @include('home.components.footer')
+	 <!-- footer -->
 
 	@include('home.components.js')
 
