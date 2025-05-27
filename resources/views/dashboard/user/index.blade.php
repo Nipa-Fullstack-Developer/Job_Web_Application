@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hello</h1>
-</body>
-</html>
+@extends('dashboard.user.master_user')
+@section('content')
+
+<h4 class="p-2 text-danger">User Dashboard</h4>
+
+@endsection
