@@ -78,8 +78,10 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::logout();
-        toastr()->success('User Logout Successfully');
-        return redirect()->route('login');
+        if (Auth::user()->is_role == 'user') {
+            Auth::logout();
+            toastr()->success('User Logout Successfully');
+            return redirect()->route('login');
+        }
     }
 }
