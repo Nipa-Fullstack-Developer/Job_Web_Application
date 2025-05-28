@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobApplier;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class JobApplierController extends Controller
 {
@@ -107,5 +108,11 @@ class JobApplierController extends Controller
 
         toastr()->success('All Applier Details Deleted Successfully');
         return redirect()->route('user.dashboard');
+    }
+
+    public function print_pdf(JobApplier $jobapplier)
+    {
+        $pdf = Pdf::loadView('dashboard.user.jobapplier.pdf', compact('jobapplier'));
+        return $pdf->download('jobapplier-details.pdf');
     }
 }

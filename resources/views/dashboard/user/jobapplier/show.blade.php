@@ -35,12 +35,9 @@
                  <label for="notes">Notes : {{ $jobapplier->notes }}</label>
              </div>
 
-
-
-
-
-
-
+             <div class="pt-5">
+                 <button class="btn btn-danger"><a class="text-white" href="{{ route('user.jobapplier.print_pdf', $jobapplier->id) }}">Download PDF</a></button>
+             </div>
          </div>
      </div>
 

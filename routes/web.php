@@ -35,6 +35,7 @@ Route::prefix('user/jobapplier/')->name('user.jobapplier.')->group(function () {
     Route::get('edit/{jobapplier}',[JobApplierController::class, 'edit'])->name('edit');
     Route::get('iamge/edit/{jobapplier}',[JobApplierController::class, 'editImage'])->name('image.edit');
     Route::get('delete/{jobapplier}', [JobApplierController::class, 'destroy'])->name('destroy');
+    Route::get('print_pdf/{jobapplier}', [JobApplierController::class, 'print_pdf'])->name('print_pdf');
 
     Route::post('store', [NewJobApplierController::class, 'store'])->name('store');
     Route::put('update/{jobapplier}', [JobApplierController::class, 'update'])->name('update');
