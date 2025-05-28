@@ -76,12 +76,4 @@ class AuthController extends Controller
         }
     }
 
-    public function logout()
-    {
-        if (Auth::user()->is_role == 'user') {
-            Auth::logout();
-            toastr()->success('User Logout Successfully');
-            return redirect()->route('login');
-        }
-    }
 }

@@ -22,7 +22,7 @@ Route::post('/register/store', [AuthController::class, 'registerStore'])->name('
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/store', [AuthController::class, 'loginStore'])->name('login.store');
 
-Route::get('/', [AuthController::class, 'logout'])->name('logout');
+
 // authentication routes
 
 // dashboard routes
