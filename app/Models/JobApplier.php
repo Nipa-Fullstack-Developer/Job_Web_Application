@@ -17,12 +17,14 @@ class JobApplier extends Model
      * @var list<string>
      */
     protected $fillable = [
+        'name',
         'company_name',
         'job_title',
         'application_date',
         'application_status',
         'newapplier_img',
-        'newapplier_alt_img',
+        'job_board',
+        'notes'
     ];
 
 }

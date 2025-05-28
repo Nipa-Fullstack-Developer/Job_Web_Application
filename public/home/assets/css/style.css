@@ -4752,3 +4752,17 @@ body {
 .applier-form label {
 	font-size: 16px;
 }
+
+.applier-card .card-img-top {
+	width: 500px;
+	height: 300px;
+}
+
+.applier-card .card-body{
+	text-align: center;
+}
+
+.applier-card .btn
+{
+	background-color:rgb(167, 2, 2)
+}

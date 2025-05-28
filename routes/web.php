@@ -7,18 +7,25 @@ use App\Http\Controllers\JobApplierController;
 use App\Http\Controllers\NewJobApplierController;
 use Illuminate\Support\Facades\Route;
 
+// homepage routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/jobapplier/details', [HomeController::class, 'details'])->name('jobapplier.details');
+Route::get('/jobapplier/details/{details}', [HomeController::class, 'detailsShow'])->name('jobapplier.details.show');
+// homepage routes end
 
+// authentication routes
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register/store', [AuthController::class, 'registerStore'])->name('register.store');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/store', [AuthController::class, 'loginStore'])->name('login.store');
+// authentication routes
 
-//  dash
+// dashboard routes
 Route::group(['middleware' => 'user'], function () {
     Route::get('/user/dashboard', [DashboardController::class, 'dashboard'])->name('user.dashboard');
 });
+
 
 Route::prefix('user/jobapplier/')->name('user.jobapplier.')->group(function () {
 
@@ -31,3 +38,5 @@ Route::prefix('user/jobapplier/')->name('user.jobapplier.')->group(function () {
     Route::put('image/update/{jobapplier}', [JobApplierController::class, 'updateImage'])->name('image.update');
 
 })->middleware('user');
+
+// dashboard route ends 
