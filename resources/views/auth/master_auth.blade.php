@@ -6,10 +6,17 @@
 </head>
 
 <body>
-    <!-- js -->
+    <!-- header -->
+    @include('auth.components.header')
+    <!-- header -->
+   
     <!-- main -->
     @yield('content')
     <!-- main -->
+
+    <!-- header -->
+    @include('auth.components.footer')
+    <!-- header -->
 
     @include('auth.components.js')
 </body>

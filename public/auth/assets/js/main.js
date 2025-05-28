@@ -1,8 +1,8 @@
 /* =====================================
-Template Name: 	Mediplus.
+Template Name: 	Medikit.
 Author Name: Naimur Rahman
 Website: http://wpthemesgrid.com/
-Description: Mediplus - Doctor HTML Template.
+Description: Medikit - Medical & Doctor HTML Template.
 Version:	1.1
 ========================================*/   
 /*=======================================
@@ -26,7 +26,7 @@ Version:	1.1
 * Wow JS
 * Scroll Up JS
 * Animate Scroll JS
-* Stellar JS
+* Parallax JS
 * Google Maps JS
 * Preloader JS
 =========================================
@@ -53,10 +53,6 @@ Version:	1.1
 			} else {
 				$('.header').removeClass("sticky");
 			}
-		});
-		
-		$('.pro-features .get-pro').on( "click", function(){
-			$('.pro-features').toggleClass('active');
 		});
 		
 		/*====================================
@@ -292,13 +288,16 @@ Version:	1.1
 			e.preventDefault();
 		});
 		
-		/*=======================
-			Stellar JS
-		=========================*/
-		$.stellar({
-		  horizontalOffset: 0,
-		  verticalOffset: 0
-		});
+		/*======================================
+			Parallax JS
+		======================================*/ 
+		$(window).stellar({
+            responsive: true,
+            positionProperty: 'position',
+			horizontalOffset: 0,
+			verticalOffset: 0,
+            horizontalScrolling: false
+        });
 
 		/*====================
 			Google Maps JS

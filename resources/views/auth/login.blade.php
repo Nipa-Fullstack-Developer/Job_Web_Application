@@ -7,7 +7,7 @@
             <div class="inner">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="{{ asset('auth/assets/img/images11.jpg') }}" width="500px" height="500px">
+                        <img src="{{ asset('auth/assets/images/images11.jpg') }}" width="750px" height="700px">
                     </div>
                     <div class="col-lg-6">
                         <div class="login-form">
@@ -17,7 +17,7 @@
                             <form method="post" action="{{ route('login.store') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-sm px-2 py-2" name="email" id="exampleFormControlInput1" placeholder="Email">
+                                    <input type="email" class="form-control form-control-sm px-3 py-2" name="email" id="exampleFormControlInput1" placeholder="Email">
                                     <div class="pt-1 text-danger">
                                         @error('email')
                                         <div class="error">{{ $message }}</div>
@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-sm px-2 py-2" name="password" id="exampleFormControlInput1" placeholder="Password">
+                                    <input type="password" class="form-control form-control-sm px-3 py-2" name="password" id="exampleFormControlInput1" placeholder="Password">
                                     <div class="pt-1 text-danger">
                                         @error('password')
                                         <div class="error">{{ $message }}</div>
