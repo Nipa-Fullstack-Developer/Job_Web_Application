@@ -4755,14 +4755,16 @@ body {
 
 .applier-card .card-img-top {
 	width: 500px;
-	height: 300px;
-}
-
-.applier-card .card-body{
-	text-align: center;
+	height: 250px;
+	
 }
 
 .applier-card .btn
 {
 	background-color:rgb(167, 2, 2)
+}
+
+.applier-card .card-text
+{
+	margin-top: 10px;
 }

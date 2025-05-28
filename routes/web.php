@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 // homepage routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/jobapplier/details', [HomeController::class, 'details'])->name('jobapplier.details');
-Route::get('/jobapplier/details/{details}', [HomeController::class, 'detailsShow'])->name('jobapplier.details.show');
+Route::get('/jobapplier/details/{jobapplier}', [HomeController::class, 'detailsShow'])->name('jobapplier.details.show');
+
 // homepage routes end
 
 // authentication routes

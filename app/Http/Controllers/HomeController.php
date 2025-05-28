@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobApplier;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class HomeController extends Controller
 {
@@ -16,14 +17,16 @@ class HomeController extends Controller
     }
 
     // jobapplier deatils
-     public function details()
+    public function details()
     {
-        $jobapplier_detail = JobApplier::all();
-        return view('home.jobapplier.details', compact('jobapplier_detail'));
+        $jobapplier = JobApplier::all();
+        return view('home.jobapplier.details', compact('jobapplier'));
     }
 
     public function detailsShow(JobApplier $jobapplier)
     {
-        return view('home.jobapplier.details_view', compact('jobapplier'));
+        $jobapplier = JobApplier::all();
+        $pdf = PDF::loadView('home.jobapplier.jobapplier_details_view',compact('jobapplier'));
+        return $pdf->download('jobapplier_details_view.pdf');
     }
 }
