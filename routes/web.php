@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Route;
 // homepage routes
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/jobapplier/details', [HomeController::class, 'details'])->name('jobapplier.details');
-Route::get('/jobapplier/details/{jobapplier}', [HomeController::class, 'detailsShow'])->name('jobapplier.details.show');
-
 // homepage routes end
 
 // authentication routes
@@ -22,6 +19,7 @@ Route::post('/register/store', [AuthController::class, 'registerStore'])->name('
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/store', [AuthController::class, 'loginStore'])->name('login.store');
 
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('user');
 
 // authentication routes
 
@@ -33,6 +31,7 @@ Route::group(['middleware' => 'user'], function () {
 
 Route::prefix('user/jobapplier/')->name('user.jobapplier.')->group(function () {
 
+    Route::get('show/{jobapplier}',[JobApplierController::class, 'show'])->name('show');
     Route::get('edit/{jobapplier}',[JobApplierController::class, 'edit'])->name('edit');
     Route::get('iamge/edit/{jobapplier}',[JobApplierController::class, 'editImage'])->name('image.edit');
     Route::get('delete/{jobapplier}', [JobApplierController::class, 'destroy'])->name('destroy');

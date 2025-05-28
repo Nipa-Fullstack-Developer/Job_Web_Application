@@ -37,7 +37,10 @@
                         <td>{{ $jobappliers->job_board }}</td>
                         <td>{{ $jobappliers->notes }}</td>
                         <td class="d-flex">
-                            <div class="p-2 bg-danger">
+                            <div class="p-2" style="background-color: rgb(3, 3, 206);">
+                                <a class="text-white" href="{{ route('user.jobapplier.show', $jobappliers->id) }}"><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                             <div class="p-2 bg-danger">
                                 <a class="text-white" href="{{ route('user.jobapplier.image.edit', $jobappliers->id) }}"><i class="fa-solid fa-file-pen" style="font-size: 16px;"></i></a>
                             </div>
                             <div class="p-2" style="background-color: rgb(3, 3, 206);">

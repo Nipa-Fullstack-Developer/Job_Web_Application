@@ -16,17 +16,4 @@ class HomeController extends Controller
         return view('home.index');
     }
 
-    // jobapplier deatils
-    public function details()
-    {
-        $jobapplier = JobApplier::all();
-        return view('home.jobapplier.details', compact('jobapplier'));
-    }
-
-    public function detailsShow(JobApplier $jobapplier)
-    {
-        $jobapplier = JobApplier::all();
-        $pdf = PDF::loadView('home.jobapplier.jobapplier_details_view',compact('jobapplier'));
-        return $pdf->download('jobapplier_details_view.pdf');
-    }
 }

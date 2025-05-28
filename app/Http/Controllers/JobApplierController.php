@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class JobApplierController extends Controller
 {
+    public function show(JobApplier $jobapplier)
+    {
+        return view('dashboard.user.jobapplier.show', compact('jobapplier'));
+    }
 
     public function edit(JobApplier $jobapplier)
     {
@@ -94,7 +98,7 @@ class JobApplierController extends Controller
 
     public function destroy(JobApplier $jobapplier)
     {
-         $image_path = 'uploads/newjobapplier/' . $jobapplier->newapplier_img;
+        $image_path = 'uploads/newjobapplier/' . $jobapplier->newapplier_img;
 
         if (file_exists($image_path)) {
             unlink($image_path);
