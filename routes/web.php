@@ -8,6 +8,7 @@ use App\Http\Controllers\NewJobApplierController;
 use Illuminate\Support\Facades\Route;
 
 // homepage routes
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/jobapplier/details', [HomeController::class, 'details'])->name('jobapplier.details');
 Route::get('/jobapplier/details/{jobapplier}', [HomeController::class, 'detailsShow'])->name('jobapplier.details.show');
@@ -20,6 +21,8 @@ Route::post('/register/store', [AuthController::class, 'registerStore'])->name('
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/store', [AuthController::class, 'loginStore'])->name('login.store');
+
+Route::get('/', [AuthController::class, 'logout'])->name('logout');
 // authentication routes
 
 // dashboard routes

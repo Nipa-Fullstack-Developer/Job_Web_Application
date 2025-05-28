@@ -26,7 +26,7 @@ class AuthController extends Controller
                 'password'          => 'required|min:6',
                 'confirm_password'  => 'required_with:password|same:password|min:6',
                 'users_img'         => 'required|mimes:jpeg,png,jpg',
-                
+
             ],
             [
                 // msg
@@ -35,7 +35,7 @@ class AuthController extends Controller
                 'password.required'         => 'Password Should Be At Least 6 Characters',
                 'confirm_password.required' => 'Confirm Password Must Match At Least 6 Characters',
                 'users_img.required'        => 'Image Should Be Valid',
-               
+
             ]
         );
 
@@ -48,7 +48,7 @@ class AuthController extends Controller
         $user->email             = $request->email;
         $user->password          = Hash::make($request->password);
         $user->users_img         = $imageName;
-      
+
 
 
         $user->save();
@@ -74,5 +74,12 @@ class AuthController extends Controller
             toastr()->error('Please Enter The Correct Credentils');
             return redirect()->back();
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        toastr()->success('User Logout Successfully');
+        return redirect()->route('login');
     }
 }
